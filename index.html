@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABC Learn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Nunito:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <span class="orb orb-1" aria-hidden="true"></span>
+    <span class="orb orb-2" aria-hidden="true"></span>
+    <span class="orb orb-3" aria-hidden="true"></span>
+
+    <main class="app">
+      <section class="screen active" id="homeScreen" aria-label="Головна">
+        <article class="card">
+          <header class="page-hero">
+            <p class="hero-letters" id="heroLetters" aria-hidden="true"></p>
+            <span class="page-badge">✦ English Alphabet</span>
+            <h1 class="page-title">
+              ABC <br />
+              Learn
+            </h1>
+            <p class="page-subtitle">
+              Тренуй вимову букв <br />
+              англійського алфавіту
+            </p>
+          </header>
+          <aside
+            class="home-stats-row"
+            id="homeStatsRow"
+            style="display: none"
+          ></aside>
+          <nav class="home-actions" aria-label="Дії на головній">
+            <button class="btn-primary" id="btnStart">Почати тест</button>
+            <button class="btn-secondary" id="btnHistoryHome">
+              Переглянути історію
+            </button>
+          </nav>
+        </article>
+      </section>
+
+      <section class="screen" id="gameScreen" aria-label="Гра">
+        <article class="card">
+          <header class="game-header">
+            <button class="btn-back-inline" id="btnBackToHome">
+              ← Головна
+            </button>
+            <span class="game-tag">ABC · Learn</span>
+          </header>
+          <p class="progress-label" id="progressLabel">Буква 1 з 10</p>
+          <div
+            class="progress-bar"
+            id="progressFill"
+            min="0"
+            max="100"
+            value="0"
+            aria-label="Прогрес тесту"
+          >
+            <span class="progress-fill"></span>
+          </div>
+          <figure class="letter-stage">
+            <figcaption class="letter" id="letterDisplay">?</figcaption>
+          </figure>
+          <div class="status info" id="statusText" aria-live="polite">
+            Натисни Listen або Speak
+          </div>
+          <nav class="btns" aria-label="Дії в грі">
+            <button class="btn btn-listen" id="btnListen">🔊 Listen</button>
+            <button class="btn btn-speak" id="btnSpeak">🎤 Speak</button>
+          </nav>
+        </article>
+      </section>
+
+      <section class="screen" id="resultScreen" aria-label="Результат">
+        <article class="card">
+          <header class="result-hero">
+            <span class="result-emoji" id="resultEmoji" aria-hidden="true"
+              >🌟</span
+            >
+            <h2 class="result-grade" id="resultGrade">Відмінно!</h2>
+            <p class="result-sub" id="resultSub">Тест завершено</p>
+          </header>
+          <dl class="result-stats">
+            <div class="stat-box">
+              <dd class="stat-num c" id="resCorrect">0</dd>
+              <dt class="stat-label">✓ Правильно</dt>
+            </div>
+            <div class="stat-box">
+              <dd class="stat-num w" id="resWrong">0</dd>
+              <dt class="stat-label">✗ Неправильно</dt>
+            </div>
+          </dl>
+          <nav class="result-actions" aria-label="Дії після тесту">
+            <button class="btn-primary" id="btnPlayAgain">Грати ще раз</button>
+            <button class="btn-secondary" id="btnGoHome">На головну</button>
+          </nav>
+        </article>
+      </section>
+
+      <section class="screen" id="historyScreen" aria-label="Історія">
+        <article class="card">
+          <header class="page-hero">
+            <button class="btn-back" id="btnHistoryBack">← Головна</button>
+            <span class="page-badge">Статистика</span>
+            <h2 class="page-title">Моя<br />Історія</h2>
+            <p class="page-subtitle">Твій прогрес за останні сесії</p>
+          </header>
+          <section id="histContent" aria-label="Записи історії"></section>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
