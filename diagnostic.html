@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Діагностика</title>
+
+    <link rel="stylesheet" href="css/diagnostic.css" />
+  </head>
+  <body>
+    <h1>SR Діагностика</h1>
+    <p class="subtitle">
+      Вимовляй букву → SR записує результат.<br />
+      Якщо результат невірний —
+      <strong style="color: var(--accent)">відредагуй вручну</strong> або клікни
+      на варіант.
+    </p>
+
+    <div class="progress-row" id="progressRow"></div>
+
+    <div class="card">
+      <div class="current-letter" id="currentLetter">A</div>
+      <div class="letter-hint">Вимов назву цієї букви англійською</div>
+
+      <button class="btn-speak" id="btnSpeak">🎤 Натисни і говори</button>
+
+      <div class="result-box" id="resultBox">
+        <div style="color: var(--muted); font-size: 13px; font-weight: 600">
+          Результат з'явиться тут після запису
+        </div>
+      </div>
+
+      <div class="nav-row">
+        <button class="btn-nav" id="btnPrev">← Назад</button>
+        <button class="btn-nav" id="btnNext">Далі →</button>
+      </div>
+    </div>
+
+    <div class="log-card">
+      <div class="log-title">Зібрані дані</div>
+      <table class="log-table">
+        <thead>
+          <tr>
+            <th>Літ.</th>
+            <th>Фінальне значення</th>
+            <th>SR повернув / варіанти</th>
+          </tr>
+        </thead>
+        <tbody id="logBody">
+          <tr>
+            <td colspan="3" style="color: var(--muted); padding: 16px 8px">
+              Поки порожньо
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="btn-row">
+        <button class="btn-copy" id="btnCopy">Скопіювати JSON</button>
+        <button class="btn-clear" id="btnClear">Очистити все</button>
+      </div>
+    </div>
+    <script type="module" src="js/diagnostic.js"></script>
+  </body>
+</html>
